@@ -1,6 +1,7 @@
 const server = require('fastify')({ logger: false, http2: false });
 const logger = require('./log');
 const routes = require('./routes');
+const { pathToFileURL } = require('url');
 
 routes.forEach((route, index) => {
     server.route(route);
@@ -22,6 +23,10 @@ routes.forEach((route, index) => {
                 ejs: require('ejs')
             },
             root: require('path').join(__dirname + '/views')
+        });
+
+        server.register(require('fastify-static'), {
+            root: require('path').join(__dirname + '/public')
         });
 
         server.register(require('fastify-formbody'));

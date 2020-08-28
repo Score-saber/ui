@@ -1,15 +1,60 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <% maps.forEach(map => { %>
-        <h1><%= map.metadata.songName %></h1>
-        <h3>by <%= map.metadata.songAuthorName %></h3>
-        <p><%= map.stats.downloads %> </p>
-        <p><%= map.stats.plays %> </p>
-        <hr>
-    <% }) %>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>Around | Portfolio Grid Style 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <meta name="msapplication-TileColor" content="#766df4">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" media="screen" href="css/simplebar.min.css">
+    <link rel="stylesheet" media="screen" href="css/theme.min.css">
+  </head>
+  <body>
+    <main class="cs-page-wrapper">
+      <section class="position-relative bg-dark pt-7 pb-5 pb-md-7 bg-size-cover bg-fixed" style="background-image: url(images/cubes-bg.jpg);">
+        <div class="cs-shape cs-shape-bottom cs-shape-curve bg-body">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 3000 185.4">
+            <path fill="currentColor" d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"/>
+          </svg>
+        </div>
+      </section>
+      <br>
+      <center>
+        <h1>Trending maps</h1>
+      </center>
+      <section class="container overflow-hidden py-5 py-md-6 py-lg-7">
+        <div class="cs-masonry-filterable pt-3 pt-md-0">
+          <div class="cs-masonry-grid" data-columns="5">
+            <% maps.forEach(map => { %>
+            <div class="cs-grid-item" data-groups="[&quot;web&quot;]">
+              <a class="card card-hover border-0 box-shadow" href="/map/<%= map.hash %>">
+                <img class="card-img-top" src="https://beatsaver.com<%= map.coverURL %>">
+                <div class="card-body text-center">
+                  <h3 class="h5 nav-heading mb-2"><%= map.metadata.songAuthorName %> - <%= map.metadata.songName %></h3>
+                  <p class="font-size-sm text-muted mb-2"><%= map.metadata.levelAuthorName %></p>
+                </div>
+              </a>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="cs-footer bg-dark pt-5 pt-md-6">
+      <div class="container pt-3 pt-md-0">
+      </div>
+    </footer>
+    
+    <script src="js/jquery.slim.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bs-custom-file-input.min.js"></script>
+    <script src="js/simplebar.min.js"></script>
+    <script src="js/smooth-scroll.polyfills.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/shuffle.min.js"></script>
+    <script src="js/theme.min.js"></script>
+  </body>
 </html>
