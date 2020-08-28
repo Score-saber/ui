@@ -1,16 +1,101 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <h1><%= playerName %>'s Recent scores</h1>
-    <hr>
-    <% scores.forEach(score => { %>
-        <h2><%= score.songName %></h2>
-        <p>by <%= score.songAuthorName %></p>
-        <br>
-    <% }) %>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/apple-touch-icon.png">
+    <meta name="msapplication-TileColor" content="#766df4">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" media="screen" href="/public/css/simplebar.min.css">
+    <link rel="stylesheet" media="screen" href="/public/css/theme.min.css">
+  </head>
+  <body>
+    <main class="cs-page-wrapper">
+      <div class="modal fade" id="modal-signin" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content border-0">
+            <div class="cs-view" id="modal-signup-view">
+              <div class="modal-header border-0 bg-dark px-4">
+                <h4 class="modal-title text-light">Search</h4>
+                <button class="close text-light" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
+              <div class="modal-body px-4">
+                
+                
+                <form class="needs-validation" method="POST" action="/player">
+                  <div class="form-group">
+                    <input class="form-control" value="Player ID" name="id" type="text" placeholder="Player ID" required>
+                  </div>
+                  <button class="btn btn-primary btn-block" type="submit">Search</button>
+                </form>
 
-</body>
+                <br />
+                <form class="needs-validation" method="POST" action="/map">
+                  <div class="form-group">
+                    <input class="form-control" value="Map ID" name="id" type="text" placeholder="Map ID" required>
+                  </div>
+                  <button class="btn btn-primary btn-block" type="submit">Search</button>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <header class="cs-header navbar navbar-expand-lg navbar-dark navbar-floating navbar-sticky" data-scroll-header>
+        <div class="container px-0 px-xl-3">
+          <div class="d-flex align-items-center order-lg-3 ml-lg-auto">
+            <a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block navbar-btn" href="#modal-signin" data-toggle="modal" data-view="#modal-signup-view">Sign up</a>
+            <a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block navbar-stuck-btn" href="#modal-signin" data-toggle="modal" data-view="#modal-signup-view">Sign up</a>
+          </div>
+        </div>
+      </header>
+      <section class="position-relative bg-dark pt-7 pb-5 pb-md-7 bg-size-cover bg-fixed" style="background-image: url(images/cubes-bg.jpg);">
+        <div class="cs-shape cs-shape-bottom cs-shape-curve bg-body">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 3000 185.4">
+            <path fill="currentColor" d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"/>
+          </svg>
+        </div>
+      </section>
+      <br>
+      <center>
+        <h1><%= playerName %>'s Stats</h1>
+      </center>
+      <section class="container overflow-hidden py-5 py-md-6 py-lg-7">
+        <div class="cs-masonry-filterable pt-3 pt-md-0">
+          <div class="cs-masonry-grid" data-columns="3">
+
+            <% scores.forEach(map => { %>
+            <div class="cs-grid-item" data-groups="[&quot;web&quot;]">
+              <a class="card card-hover border-0 box-shadow" href="/map/<%= map.songHash %>">
+                <div class="card-body text-center">
+                  <h3 class="h5 nav-heading mb-2"><%= map.songAuthorName %> - <%= map.songName %></h3>
+                  <p class="font-size-sm text-muted mb-2"><%= map.levelAuthorName %></p>
+                </div>
+              </a>
+            </div>
+            <% }) %>
+
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="cs-footer bg-dark pt-5 pt-md-6">
+      <div class="container pt-3 pt-md-0">
+      </div>
+    </footer>
+    
+    <script src="/public/js/jquery.slim.min.js"></script>
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+    <script src="/public/js/bs-custom-file-input.min.js"></script>
+    <script src="/public/js/simplebar.min.js"></script>
+    <script src="/public/js/smooth-scroll.polyfills.min.js"></script>
+    <script src="/public/js/imagesloaded.pkgd.min.js"></script>
+    <script src="/public/js/shuffle.min.js"></script>
+    <script src="/public/js/theme.min.js"></script>
+  </body>
 </html>

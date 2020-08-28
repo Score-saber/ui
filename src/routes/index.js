@@ -3,13 +3,23 @@ const Controller = require('../controllers');
 const routes = [
     {
         method: 'GET',
-        url: '/',
+        url: '/:page',
         handler: Controller.getRoot
     },
     {
         method: 'GET',
         url: '/player/:id',
         handler: Controller.getPlayerRecent
+    },
+    {
+        method: 'POST',
+        url: '/player',
+        handler: Controller.postPlayer
+    },
+    {
+        method: 'POST',
+        url: '/map',
+        handler: Controller.postMap
     },
     {
         method: 'GET',

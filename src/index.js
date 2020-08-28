@@ -26,7 +26,8 @@ routes.forEach((route, index) => {
         });
 
         server.register(require('fastify-static'), {
-            root: require('path').join(__dirname + '/public')
+            root: require('path').join(__dirname + '/public'),
+            prefix: '/public'
         });
 
         server.register(require('fastify-formbody'));
