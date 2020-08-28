@@ -1,0 +1,15 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <% maps.forEach(map => { %>
+        <h1><%= map.metadata.songName %></h1>
+        <h3>by <%= map.metadata.songAuthorName %></h3>
+        <p><%= map.stats.downloads %> </p>
+        <p><%= map.stats.plays %> </p>
+        <hr>
+    <% }) %>
+</body>
+</html>

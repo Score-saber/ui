@@ -1,0 +1,31 @@
+{
+  "name": "ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Score-saber/ui.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Score-saber/ui/issues"
+  },
+  "homepage": "https://github.com/Score-saber/ui#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "ejs": "^3.1.5",
+    "fastify": "^3.3.0",
+    "fastify-formbody": "^5.0.0",
+    "fastify-multipart": "^3.0.0",
+    "jsonarraytools": "^1.0.1",
+    "node-fetch": "^2.6.0",
+    "path": "^0.12.7",
+    "point-of-view": "^4.4.0"
+  }
+}
