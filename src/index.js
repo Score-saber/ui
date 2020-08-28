@@ -1,7 +1,6 @@
 const server = require('fastify')({ logger: false, http2: false });
 const logger = require('./log');
 const routes = require('./routes');
-const { pathToFileURL } = require('url');
 
 routes.forEach((route, index) => {
     server.route(route);

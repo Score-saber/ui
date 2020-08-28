@@ -128,7 +128,7 @@ exports.getPlayerRecent = async(req, res) => {
                 }
 
                 res.view('player.ejs', {
-                    playerName: playerInfo.playerInfo.playerName,
+                    playerInfo: playerInfo.playerInfo,
                     scores: json.scores
                 })
             });

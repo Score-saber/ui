@@ -25,7 +25,7 @@
                 
                 <form class="needs-validation" method="POST" action="/player">
                   <div class="form-group">
-                    <input class="form-control" value="Player ID" name="id" type="text" placeholder="Player ID" required>
+                    <input class="form-control" name="id" type="text" placeholder="Player ID" required>
                   </div>
                   <button class="btn btn-primary btn-block" type="submit">Search</button>
                 </form>
@@ -33,7 +33,7 @@
                 <br />
                 <form class="needs-validation" method="POST" action="/map">
                   <div class="form-group">
-                    <input class="form-control" value="Map ID" name="id" type="text" placeholder="Map ID" required>
+                    <input class="form-control" name="id" type="text" placeholder="Map ID" required>
                   </div>
                   <button class="btn btn-primary btn-block" type="submit">Search</button>
                 </form>
@@ -46,8 +46,9 @@
       <header class="cs-header navbar navbar-expand-lg navbar-dark navbar-floating navbar-sticky" data-scroll-header>
         <div class="container px-0 px-xl-3">
           <div class="d-flex align-items-center order-lg-3 ml-lg-auto">
-            <a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block navbar-btn" href="#modal-signin" data-toggle="modal" data-view="#modal-signup-view">Sign up</a>
-            <a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block navbar-stuck-btn" href="#modal-signin" data-toggle="modal" data-view="#modal-signup-view">Sign up</a>
+            <a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block navbar-btn" href="/">Home</a>
+            <a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block navbar-btn" href="#modal-signin" data-toggle="modal" data-view="#modal-signup-view">Search</a>
+            <a class="btn btn-primary ml-grid-gutter d-none d-lg-inline-block navbar-stuck-btn" href="#modal-signin" data-toggle="modal" data-view="#modal-signup-view">Search</a>
           </div>
         </div>
       </header>
